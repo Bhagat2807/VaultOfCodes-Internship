@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background: url('https://th.bing.com/th/id/R.6f5405507c1af05e58b331f94827e3e0?rik=BuNAyUB306BHzQ&riu=http%3a%2f%2fst.depositphotos.com%2f1756445%2f4385%2fi%2f950%2fdepositphotos_43853655-Word-cloud-programming-languages-or.jpg&ehk=2U6UwD%2boziU3M6ia8StYIzlGvGWImfMWYAn4dDqyIvA%3d&risl=&pid=ImgRaw&r=0') no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(4px);
+        }
+        .form-container {
+            background: #fff;
+            max-width: 400px;
+            margin: 0% auto;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+        }
+        h2 {
+            text-align: center;
+            color: #2a72d4;
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #bdb9ee;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .gender-group {
+            margin-bottom: 1rem;
+        }
+        .gender-group label {
+            display: inline-block;
+            margin-right: 1.5rem;
+            font-weight: 400;
+        }
+        .terms {
+            margin-bottom: 1.2rem;
+        }
+        button {
+            width: 100%;
+            background: #2a72d4;
+            color: #fff;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Vaults of Code Registration</h2>
+        <form>
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <div class="gender-group">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+
+            <div class="terms">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the Terms and Conditions
+                </label>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
