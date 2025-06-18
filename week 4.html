@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gym Product Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(34, 193, 195, 0.95);
+            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            padding: 2rem 0 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            animation: slideDown 1s cubic-bezier(.77,0,.18,1) 0.2s both;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-60px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        
+        .featured-products {
+            flex: 1;
+            padding: 3rem 1rem 2rem 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1) 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .featured-products h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #43cea2;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.07);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(34,193,195,0.08);
+            padding: 1.5rem 1rem 2rem 1rem;
+            text-align: center;
+            transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.03) rotate(-1deg);
+            box-shadow: 0 8px 32px rgba(34,193,195,0.18);
+            background: rgba(34,193,195,0.12);
+        }
+
+        .product-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 16px rgba(24,90,157,0.15);
+            transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 8px 32px rgba(67,206,162,0.18);
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin: 0.5rem 0 0.3rem 0;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #e0f7fa;
+            margin-bottom: 1.2rem;
+            min-height: 48px;
+        }
+
+        .product-card .price {
+            font-size: 1.1rem;
+            color: #43cea2;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .product-card button {
+            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 0.7rem 2rem;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(24,90,157,0.12);
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            outline: none;
+        }
+
+        .product-card button:hover {
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+            transform: scale(1.07);
+            box-shadow: 0 4px 16px rgba(67,206,162,0.18);
+        }
+
+        footer {
+            background: #232526;
+            color: #b2dfdb;
+            text-align: center;
+            padding: 1.2rem 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-top: auto;
+            box-shadow: 0 -2px 12px rgba(24,90,157,0.08);
+            animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1) 1.2s both;
+        }
+
+        @media (max-width: 700px) {
+            .featured-products {
+                padding: 2rem 0.5rem 1rem 0.5rem;
+            }
+            .products-grid {
+                gap: 1.2rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .featured-products h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PulseFit Gym Gear</h1>
+        <p>Unleash Your Potential with Our Premium Fitness Products</p>
+    </header>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://wallpaperaccess.com/full/1244800.jpg" alt="Dumbbells">
+                <h3>Hex Dumbbells Set</h3>
+                <p>Durable, anti-slip grip dumbbells for strength training at any level.</p>
+                <span class="price">₹ 2500</span>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://hirakraja.com/3269-large_default/tpe-yoga-mat-eco-friendly.jpg" alt="Yoga Mat">
+                <h3>Eco Yoga Mat</h3>
+                <p>Non-slip, eco-friendly yoga mat for ultimate comfort and stability.</p>
+                <span class="price">₹ 1200</span>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://bing.com/th/id/OIP.lxZ6YunEpvNE9i9T89gMNAAAAA?cb=thvnextc2&rs=1&pid=ImgDetMain" alt="Resistance Bands">
+                <h3>Resistance Bands</h3>
+                <p>Set of 5 bands for versatile workouts, from stretching to strength training.</p>
+                <span class="price">₹ 400</span>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://bing.com/th/id/OIP.l-byHE7-kJV_toimrOnNgAHaHc?cb=thvnextc2&rs=1&pid=ImgDetMain" alt="Water Bottle">
+                <h3>Insulated Water Bottle</h3>
+                <p>Keep your drinks cold for hours with our leak-proof, stylish bottle.</p>
+                <span class="price">₹ 450</span>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 PulseFit Gym Gear. All rights reserved.
+    </footer>
+</body>
+</html>
